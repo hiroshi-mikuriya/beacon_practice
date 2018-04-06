@@ -56,7 +56,8 @@ sudo apt-get install libbluetooth-dev
 npm install bleacon # sudoつけると失敗する
 ```
 
-目的に応じて以下を実行すればよい。
+以上でセットアップ完了。  
+目的に応じて以下のいずれかを実行する。
 
 * アドバタイジングする
   - sudo node advertise.js
