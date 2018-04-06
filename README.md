@@ -1,10 +1,14 @@
 # Raspberry Pi ZeroをBeaconにするトライアル
 
+セットアップ環境：MacOS High Sierra 10.13.4
+
 ## Raspberry Pi Zeroセットアップ
 
-OSイメージをダウンロード
+OSイメージをダウンロード（2018-03-13-raspbian-stretch-lite.zip）
 
-EtcherでSDカードに焼く
+※liteはxwindowがないので起動が早い。Zeroは低スペックなのでliteをお勧めする。
+
+EtcherでSDカードに焼く（8GB以上推奨。試していないがliteなら4GBでもいけるかも。）
 
 USB接続でSSHするための３つの設定を行う
 * ssh
@@ -14,7 +18,9 @@ USB接続でSSHするための３つの設定を行う
 * cmdline.txt
   - modules-load=dwc2,g_ether 追記（rootwait と quiet の間）
 
-USBでPCとつなぐ
+USBでPCとつなぐ（PWR INではなくUSBのほうに）
+
+SSH実行コマンド
 
 `ssh pi@raspberrypi.local`
 
@@ -24,11 +30,11 @@ apt-getを最新にする
 
 `sudo apt-get upgrade & sudo apt-get update`
 
-rubyやvimなどあると便利なものをインストールする
+ruby, vim, ftpサーバーなど便利なものをインストールする
 
 `sudo apt-get install -y vsftpd vim ruby`
 
-FTPを設定したい場合はは以下を参考にする  
+FTPを設定したい場合は以下を参考にする  
 http://yamaryu0508.hatenablog.com/entry/2014/12/02/102648
 
 ## Nodejsインストール
